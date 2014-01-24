@@ -1,0 +1,9 @@
+CoordinateSystemType:P
+XYUnit:M
+ZUnit:M
+Spheroid:IAG-75,6378140,298.257 
+PrimeMeridian:Greenwich
+Projection:高斯-克吕格
+Parameters:,114,,,,1,,,3,38
+VerticalDatum:1985国家高程基准
+TemporalReferenceSystem:协调世界时
