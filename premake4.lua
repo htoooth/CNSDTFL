@@ -1,60 +1,61 @@
 -----------------------------------------
---premake4µÄÅäÖÃÎÄ¼ş
---Éú³ÉwinÏÂvsµÄ¹¤³ÌÎÄ¼şºÍGUNµÄmakefileÎÄ¼ş
---Éú³Éµ¥ºÍ¶à½ø³Ì³ÌĞò
---×÷Õß£ºhtoo
---Ê±¼ä£º2013Äê02ÔÂ22ÈÕ
---Ê¹ÓÃ·½·¨£º
+--premake4çš„é…ç½®æ–‡ä»¶
+--ç”Ÿæˆwinä¸‹vsçš„å·¥ç¨‹æ–‡ä»¶å’ŒGUNçš„makefileæ–‡ä»¶
+--ç”Ÿæˆå•å’Œå¤šè¿›ç¨‹ç¨‹åº
+--ä½œè€…ï¼šhtoo
+--æ—¶é—´ï¼š2013å¹´02æœˆ22æ—¥
+--ä½¿ç”¨æ–¹æ³•ï¼š
 --  premake4.exe --help
---winÏÂ£º
+--winä¸‹ï¼š
 --  premake4.exe vs2010
---linuxÏÂ£º
+--linuxä¸‹ï¼š
 --  premake4.exe gmake
 --  make help
 --  make config=release all
 --  make config=dubug all
---×¢Òâ£º±¾ÅäÖÃÎÄ¼şµÄÖ»ÄÜÉú³ÉvsºÍg++µÄ¹¤³ÌÎÄ¼ş
---      ¶ÔÆäËüIDEÔİÊ±²»×öÖ§³Ö¡£
+--æ³¨æ„ï¼šæœ¬é…ç½®æ–‡ä»¶çš„åªèƒ½ç”Ÿæˆvså’Œg++çš„å·¥ç¨‹æ–‡ä»¶
+--      å¯¹å…¶å®ƒIDEæš‚æ—¶ä¸åšæ”¯æŒã€‚
 -----------------------------------------
 
---¶¨ÒåÂ·¾¶
+--å®šä¹‰è·¯å¾„
    
---ÏîÄ¿¹¤³ÌÎÄ¼şÂ·¾¶
+--é¡¹ç›®å·¥ç¨‹æ–‡ä»¶è·¯å¾„
 local prj_dir="prj/"
---Éú³É¶ş½øÖÆÎÄ¼şÂ·¾¶
+--ç”ŸæˆäºŒè¿›åˆ¶æ–‡ä»¶è·¯å¾„
 local target_dir="bin/"
 
 -----------------------------------------
 
---»·¾³±äÁ¿¶¨Òå:»·¾³±äÁ¿±ØĞëÉèÖÃ²ÅÄÜÊ¹ÓÃ
---gdal»·¾³±äÁ¿ÉèÖÃ
---gdali:Á´½Ó¿âÃû
+--ç¯å¢ƒå˜é‡å®šä¹‰:ç¯å¢ƒå˜é‡å¿…é¡»è®¾ç½®æ‰èƒ½ä½¿ç”¨
+--gdalç¯å¢ƒå˜é‡è®¾ç½®
+--gdali:é“¾æ¥åº“å
 local gdali=nil
---gdallib:Á´½Ó¿âËùÔÚÂ·¾¶
+--gdallib:é“¾æ¥åº“æ‰€åœ¨è·¯å¾„
 local gdallib=nil
---gdalinc:Í·ÎÄ¼şËùÔÚÂ·¾¶
+--gdalinc:å¤´æ–‡ä»¶æ‰€åœ¨è·¯å¾„
 local gdalinc=nil
 
---mpi»·¾³±äÁ¿ÉèÖÃ
---mpii:Á´½Ó¿âÃû
+--ä½¿ç”¨mpichçš„ç‰ˆæœ¬
+--mpiç¯å¢ƒå˜é‡è®¾ç½®
+--mpii:é“¾æ¥åº“å
 local mpii=nil
---mpiixx:mpi c++ Á´½Ó¿âÃû
+--mpiixx:mpi c++ é“¾æ¥åº“å
 local mpiixx=nil
---mpilib:Á´½Ó¿âËùÔÚÂ·¾¶
+--mpilib:é“¾æ¥åº“æ‰€åœ¨è·¯å¾„
 local mpilib=nil
---mpiinc:Í·ÎÄ¼şËùÔÚÂ·¾¶
+--mpiinc:å¤´æ–‡ä»¶æ‰€åœ¨è·¯å¾„
 local mpiinc=nil
 
 -----------------------------------------
---ÒÔÏÂÕâ¼¸¸ö»·¾³±äÁ¿±ØË³ÔÚÏµÍ³»·¾³ÖĞÉèÖÃ
---GDALI:GDALµÄÁ´½Ó¿âÃû
---GDALLIB:GDALµÄÁ´½Ó¿âÂ·¾¶
---GDALINC:GDALµÄÍ·ÎÄ¼şÂ·¾¶
---MPII:MPIµÄÁ´½Ó¿âÃû
---MPILIB:MPIµÄÁ´½Ó¿âÂ·¾¶
---MPIINC:MPIµÄÍ·ÎÄ¼şÂ·¾¶
+--ä»¥ä¸‹è¿™å‡ ä¸ªç¯å¢ƒå˜é‡å¿…é¡ºåœ¨ç³»ç»Ÿç¯å¢ƒä¸­è®¾ç½®
+--GDALI:GDALçš„é“¾æ¥åº“å
+--GDALLIB:GDALçš„é“¾æ¥åº“è·¯å¾„
+--GDALINC:GDALçš„å¤´æ–‡ä»¶è·¯å¾„
+--MPII:MPIçš„é“¾æ¥åº“å
+--MPILIB:MPIçš„é“¾æ¥åº“è·¯å¾„
+--MPIINC:MPIçš„å¤´æ–‡ä»¶è·¯å¾„
 -----------------------------------------
---winÏÂ»·¾³±äÁ¿ÉèÖÃÖµ:$()
+--winä¸‹ç¯å¢ƒå˜é‡è®¾ç½®å€¼:$()
 if os.is("windows") then
     gdali="gdal_i"
     gdallib="$(GDALLIB)"
@@ -64,14 +65,14 @@ if os.is("windows") then
     mpilib="$(MPILIB)"
     mpiinc="$(MPIINC)"
 
---linuxÏÂ»·¾³±äÁ¿ÉèÖÃÖµ:${}
+--linuxä¸‹ç¯å¢ƒå˜é‡è®¾ç½®å€¼:${}
 elseif os.is("linux") then
     gdali="gdal"
     gdalinc="${GDALINC}"
     gdallib="${GDALLIB}"
 
     mpii="mpi"
-    --!!×¢Òâ£¬Õâ¸ö¶«Î÷ÔÚlinuxÏÂÊ¹ÓÃ£¬ÔÚwinÏÂ²âÊÔÃ»ÓĞ×÷ÓÃ
+    --!!æ³¨æ„ï¼Œè¿™ä¸ªä¸œè¥¿åœ¨linuxä¸‹ä½¿ç”¨ï¼Œåœ¨winä¸‹æµ‹è¯•æ²¡æœ‰ä½œç”¨
     mpiixx="mpi_cxx"
     mpilib="${MPILIB}"
     mpiinc="${MPIINC}"
@@ -79,36 +80,40 @@ elseif os.is("linux") then
 end
 
 -----------------------------------------
---Éú³ÉÏîÄ¿ÎÄ¼ş
---½â¾ö·½°¸Ãû
+--ç”Ÿæˆé¡¹ç›®æ–‡ä»¶
+--è§£å†³æ–¹æ¡ˆå
 solution "hpgc"
 
-    --ÉèÖÃÕë¶ÔDebugºÍRelease·Ö±ğÉèÖÃ
+    --è®¾ç½®é’ˆå¯¹Debugå’ŒReleaseåˆ†åˆ«è®¾ç½®
     configurations {"Debug", "Release"}
 -----------------------------------------
-    --¶ÔDebugÏÂµÄÇé¿ö½øĞĞÉèÖÃ£¬ÀıÈç¶¨Òåµ÷ÊÔ·ûºÅ
+    --å¯¹Debugä¸‹çš„æƒ…å†µè¿›è¡Œè®¾ç½®ï¼Œä¾‹å¦‚å®šä¹‰è°ƒè¯•ç¬¦å·
     configuration "Debug"
-        --´ò¿ª¸ú×Ù
-        defines {"TRACEON"}
+        --æ‰“å¼€è·Ÿè¸ª
+        defines {"TRACEON","MPICH_SKIP_MPICXX"}
 
-    --ÔÚgunÏÂÊ¹ÓÃĞÂ±ê×¼
-    --¶ÔÉú³Émakefile½øĞĞµ¥¶ÀÉèÖÃ
-    --premake4¿ÉÒÔ¶ÔÉú³ÉµÄ¹¤³ÌÎÄ¼ş½øĞĞµ¥¶ÀÉèÖÃ
-    --Èç¿ÉÒÔ¶ÔvsÉèÖÃ£ºconfiguration "vs*"
+    --å…¶ä¸­MPICH_SKIP_MPICXXæ˜¯æŒ‡è·³è¿‡MPICXXçš„ç‰ˆæœ¬ï¼Œåªç”¨cç‰ˆæœ¬çš„api
+    configuration "Release"
+        defines {"MPICH_SKIP_MPICXX"}
+
+    --åœ¨gunä¸‹ä½¿ç”¨æ–°æ ‡å‡†
+    --å¯¹ç”Ÿæˆmakefileè¿›è¡Œå•ç‹¬è®¾ç½®
+    --premake4å¯ä»¥å¯¹ç”Ÿæˆçš„å·¥ç¨‹æ–‡ä»¶è¿›è¡Œå•ç‹¬è®¾ç½®
+    --å¦‚å¯ä»¥å¯¹vsè®¾ç½®ï¼šconfiguration "vs*"
     configuration "gmake"
-        --¹¹½¨¹¤¾ßÑ¡Ïî 
+        --æ„å»ºå·¥å…·é€‰é¡¹ 
         buildoptions {"--std=c++0x"}
         
-    --¶ÔReleaseÏÂµÄÇé¿ö½øĞĞÉèÖÃ£¬ÀıÈç¶¨Òå³ıÈ¥µ÷ÊÔ·ûºÅ
+    --å¯¹Releaseä¸‹çš„æƒ…å†µè¿›è¡Œè®¾ç½®ï¼Œä¾‹å¦‚å®šä¹‰é™¤å»è°ƒè¯•ç¬¦å·
     --configuration "Release"
     --  defines {"NOBUG"}
 -----------------------------------------
 
-    --¹¤³ÌÎÄ¼şÉú³ÉµÄÄ¿Â¼    
+    --å·¥ç¨‹æ–‡ä»¶ç”Ÿæˆçš„ç›®å½•    
     location(prj_dir)
 -----------------------------------------
 
-    --²¢ĞĞ¿ò¼ÜµÄÔ´ÎÄ¼ş
+    --å¹¶è¡Œæ¡†æ¶çš„æºæ–‡ä»¶
     local 
     framework =
     {
@@ -124,7 +129,7 @@ solution "hpgc"
         "src/geoalgorithm.format.h",
         "src/geoalgorithm.format.cpp",
 
-        --Í¶Ó°Ö§³Ö
+        --æŠ•å½±æ”¯æŒ
         "src/fmts.csr.h",
         "src/fmts.csr.cpp",
 
@@ -148,7 +153,7 @@ solution "hpgc"
         "src/port.designpattern.h"
     }
     
-    --½«ºÏ²¢Á½¸ö±íµÄÄÚÈİ
+    --å°†åˆå¹¶ä¸¤ä¸ªè¡¨çš„å†…å®¹
     function merge(table1,table2)
         for i,v in pairs(table1) do
             table.insert(table2,v)
@@ -158,19 +163,19 @@ solution "hpgc"
     end
 
 -----------------------------------------
-    --ÉèÖÃÏîÄ¿
-    --ÏîÄ¿Ãû
+    --è®¾ç½®é¡¹ç›®
+    --é¡¹ç›®å
     project "CVCT2GDAL"
-        --Éú³É¶ş½øÖÆ³ÌĞòÃû
+        --ç”ŸæˆäºŒè¿›åˆ¶ç¨‹åºå
         targetname "cvct2gdal"
-        --¶ş½øÖÆÎÄ¼şµÄÂ·¾¶
+        --äºŒè¿›åˆ¶æ–‡ä»¶çš„è·¯å¾„
         targetdir(target_dir) 
-        --ÏîÄ¿ÀàĞÍÎª¿ØÖÆÌ¨
+        --é¡¹ç›®ç±»å‹ä¸ºæ§åˆ¶å°
         kind "ConsoleApp"
-        --²ÉÓÃc++ÓïÑÔ
+        --é‡‡ç”¨c++è¯­è¨€
         language"c++"
 
-        --vctl¸ñÊ½µÄÎÄ¼şÂ·¾¶
+        --vctlæ ¼å¼çš„æ–‡ä»¶è·¯å¾„
         local cvct = 
         {
             "src/fmts.cvct.h",
@@ -189,20 +194,20 @@ solution "hpgc"
             "src/geoalgorithm.cvct2gdal.cpp"
         }
 
-        --ÏîÄ¿Ô´ÎÄ¼şÂ·¾¶
+        --é¡¹ç›®æºæ–‡ä»¶è·¯å¾„
         files (merge(framework,cvct))
 
-        --¸½¼Ó¿âÉèÖÃ
-        --Á´½Ó¿âÃû
+        --é™„åŠ åº“è®¾ç½®
+        --é“¾æ¥åº“å
         links {gdali,mpii,mpiixx}
-        --Á´½Ó¿âÂ·¾¶
+        --é“¾æ¥åº“è·¯å¾„
         libdirs {gdallib,mpilib}
-        --¿âµÄÂ·¾¶
+        --åº“çš„è·¯å¾„
         includedirs {gdalinc,mpiinc}
 
 -----------------------------------------
 
-    --ÒÔÏÂÍ¬ÉÏ
+    --ä»¥ä¸‹åŒä¸Š
     project "CGRD2GDAL"
         targetname "cgrd2gdal"
         targetdir(target_dir) 
@@ -274,4 +279,3 @@ solution "hpgc"
         links {gdali,mpii,mpiixx}
         libdirs {gdallib,mpilib}
         includedirs {gdalinc,mpiinc}
-

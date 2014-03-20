@@ -2,6 +2,10 @@
 
 #define DAT_BLOCK_H_INCLUDE
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 namespace port
 {
 

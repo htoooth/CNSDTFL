@@ -5,6 +5,10 @@
 ///设计模式：单件
 ///使用单件来保存常用信息
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 namespace port
 {
 
