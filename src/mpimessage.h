@@ -70,7 +70,7 @@ private:
 class Data
 {
 public:
-	Data();;
+	Data();
 
 	Data(void * buf, int count, MPI_Datatype datatpye);
 

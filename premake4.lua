@@ -150,7 +150,10 @@ solution "hpgc"
         "src/port.debug.h",
         "src/port.datblock.h",
         "src/port.datblock.cpp",
-        "src/port.designpattern.h"
+        "src/port.designpattern.h",
+        "src/port.time.h",
+        "src/port.cputime.cpp",
+        "src/port.realtime.cpp"
     }
     
     --将合并两个表的内容
@@ -225,7 +228,7 @@ solution "hpgc"
 
             "src/apps.cgrd2gdal.cpp",
             "src/geoalgorithm.cgrd2gdal.h",
-            "src/geoalgorithm.cgrd2gdal.cpp"
+            "src/geoalgorithm.cgrd2gdal.cpp",
         }
         
         files (merge(framework,cgrd))
