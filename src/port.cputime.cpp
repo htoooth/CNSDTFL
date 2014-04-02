@@ -24,7 +24,7 @@
  * Returns the amount of CPU time used by the current process,
  * in seconds, or -1.0 if an error occurred.
  */
-double CPL_DLL CPL_STDCALL getCPUTime( )
+double getCPUTime( )
 {
 #if defined(_WIN32)
 	/* Windows -------------------------------------------------- */

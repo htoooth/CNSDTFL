@@ -33,7 +33,7 @@
  * The returned real time is only useful for computing an elapsed time
  * between two calls to this function.
  */
-double CPL_DLL CPL_STDCALL getRealTime( )
+double getRealTime( )
 {
 #if defined(_WIN32)
 	FILETIME tm;
