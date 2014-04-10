@@ -152,9 +152,9 @@ int HPGCFrameWork<HPGAlg, HPGPart>::RunAlgorithmInMasterAndSlave()
 		BUG(idata.nYSize);
 		BUG("=========");
 
-		double start_time = mo.GetTime();
+		double start_time = mo.GetNow();
 		m_HPGAlgorithm.Slave_Compute(idata);
-		double end_time = mo.GetTime();
+		double end_time = mo.GetNow();
 		
 	}
 

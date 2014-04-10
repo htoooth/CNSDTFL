@@ -28,7 +28,7 @@ int main(int MPI_argc, char ** MPI_argv)
 		time_t secnow;
 		time(&secnow);
 		tmptr = localtime(&secnow);
-		printf("[START TIME]%4d/%02d/%02d %02d:%02d:%02d",
+		printf("[START TIME]%4d/%02d/%02d %02d:%02d:%02d\n",
 		       tmptr->tm_year + 1900, tmptr->tm_mon + 1,
 		       tmptr->tm_mday, tmptr->tm_hour,
 		       tmptr->tm_min, tmptr->tm_sec);
@@ -62,12 +62,12 @@ int main(int MPI_argc, char ** MPI_argv)
 		time_t secnow;
 		time(&secnow);
 		tmptr = localtime(&secnow);
-		printf("[END TIME]%4d/%02d/%02d %02d:%02d:%02d",
+		printf("[END TIME]%4d/%02d/%02d %02d:%02d:%02d\n",
 		       tmptr->tm_year + 1900, tmptr->tm_mon + 1,
 		       tmptr->tm_mday, tmptr->tm_hour,
 		       tmptr->tm_min, tmptr->tm_sec);
 
-		printf("[TOTAL]The Total time is < %f > seconds!", dfTotalTime);
+		printf("[TOTAL]The Total time is < %f > seconds!\n", dfTotalTime);
 	}
 
 	/************************************************************************/
