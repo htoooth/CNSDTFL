@@ -1,8 +1,10 @@
 #include "mpiobject.h"
+#include "port.time.h"
 
 double MPIObject::GetTime() const
 {
-    return MPI_Wtime();
+    //return MPI_Wtime();
+	return getCPUTime();
 }
 
 int MPIObject::GetRank() const
@@ -107,7 +109,7 @@ MPIObject::MPIObject( int MPI_argc, char ** MPI_argv )
     }
 
     ///记录系统启动时间
-    m_StartTime = MPI_Wtime();
+    m_StartTime = GetTime();
 }
 
 MPIObject::~MPIObject()
