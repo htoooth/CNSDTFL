@@ -156,6 +156,9 @@ int HPGCFrameWork<HPGAlg, HPGPart>::RunAlgorithmInMasterAndSlave()
 		m_HPGAlgorithm.Slave_Compute(idata);
 		double end_time = mo.GetNow();
 		
+		char buf[50];
+		int n = sprintf(buf, "%d %d %f", mo.GetMe(), idata.DID, end_time - start_time);
+		mo.Print(buf);
 	}
 
 	///等全部处理完

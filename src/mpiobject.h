@@ -117,6 +117,9 @@ public:
 	///打印当前信息
 	void PrintMe() const ;
 
+	///打印信息
+	void Print(const char * str) const;
+
 	///打印附加信息
 	template <typename T>
 	void PrintMe(T val);

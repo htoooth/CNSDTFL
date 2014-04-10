@@ -193,6 +193,11 @@ int MPIObject::GetOurSize() const
     return GetSize();
 }
 
+void MPIObject::Print(const char * str) const
+{
+	std::cout << str << std::endl;
+}
+
 /************************************************************************/
 /* 初始化全局变量                                                         */
 /************************************************************************/
