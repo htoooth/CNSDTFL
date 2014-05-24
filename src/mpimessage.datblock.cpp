@@ -22,7 +22,7 @@ _datblock::_datblock()
 	MPI_Get_address(&m_Temp.PID, m_Displs + 1);
 	MPI_Get_address(&m_Temp.tStart, m_Displs + 2);
 
-	m_Displs[3] = sizeof(SaveTypeDatBlock);
+	m_Displs[3] = sizeof(DatBlock);
 	m_Displs[2] = m_Displs[2] - m_Displs[1];
 	m_Displs[1] = m_Displs[1] - m_Displs[0];
 	m_Displs[0] = 0;
